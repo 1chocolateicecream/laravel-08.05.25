@@ -8,12 +8,18 @@
 </head>
 <body>
     <h1>Notes</h1>
-    <a href="/notes/create">Izveidot jaunu ierakstu</a>
+    <a href="/notes/create"><button type="button">Izveidot jaunu ierakstu</button></a><br><br>
     <ul>
 
         @foreach($notes as $note)
-        <h2>{{ $note->title }}</h2>
-        <p>{{ $note->content }}</p>
+        <div class="post-card">
+            <h2>{{ $note->title }}</h2>
+            <p>{{ $note->content }}</p>
+
+            <form action='/notes/{{$note->id}}' method="get">
+                <button type="submit">👁 Apskatīt</button>
+            </form>
+        </div>
         @endforeach
     </ul>
 </body>
