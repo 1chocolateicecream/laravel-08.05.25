@@ -10,5 +10,11 @@
         <h2>{{ $note->title }}</h2>
         <p>{{ $note->content }}</p>
     </div>
+
+    <form action="/notes/{{$note->id}}" method="POST" class="inline-form">
+        @csrf
+        @method('DELETE')
+        <button type="submit" style="background-color: #ef9a9a;">☠ Dzēst</button>
+    </form>
 </body>
 </html>

@@ -33,4 +33,10 @@ class NoteController extends Controller
         $note = Note::findOrFail($id);
         return view('notes.show', ['note' => $note]);
     }
+
+    public function destroy($id)
+    {
+        Note::findOrFail($id)->delete();
+        return redirect("/notes");
+    }
 }
