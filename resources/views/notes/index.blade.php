@@ -8,10 +8,13 @@
 </head>
 <body>
     <h1>Notes</h1>
-    
-    @foreach($notes as $note)
+    <a href="/notes/create">Izveidot jaunu ierakstu</a>
+    <ul>
+
+        @foreach($notes as $note)
         <h2>{{ $note->title }}</h2>
         <p>{{ $note->content }}</p>
-    @endforeach
+        @endforeach
+    </ul>
 </body>
 </html>

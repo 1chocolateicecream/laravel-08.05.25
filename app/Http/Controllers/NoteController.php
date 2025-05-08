@@ -17,4 +17,14 @@ class NoteController extends Controller
     {
         return view('notes.create');
     }
+
+    public function store(Request $request)
+    {
+        Note::create([
+            'title' => $request->title,
+            'content' => $request->content,
+        ]);
+    
+        return redirect('/notes');
+    }
 }
