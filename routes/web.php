@@ -16,3 +16,7 @@ Route::post('/notes', [NoteController::class, 'store']);
 Route::get('/notes/{id}', [NoteController::class, 'show']);
 
 Route::delete('/notes/{id}', [NoteController::class, 'destroy']);
+
+Route::put('/notes/{id}', [NoteController::class, 'update']);
+
+Route::get('/notes/{id}/edit', [NoteController::class, 'edit']);

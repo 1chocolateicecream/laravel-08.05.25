@@ -11,6 +11,11 @@
         <p>{{ $note->content }}</p>
     </div>
 
+    <div class="button-row">
+    <a href="/notes/{{$note->id}}/edit">
+        <button>✐ Rediģēt</button>
+    </a>
+
     <form action="/notes/{{$note->id}}" method="POST" class="inline-form">
         @csrf
         @method('DELETE')

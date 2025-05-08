@@ -39,4 +39,19 @@ class NoteController extends Controller
         Note::findOrFail($id)->delete();
         return redirect("/notes");
     }
+
+    public function update(Request $request, $id)
+    {
+        $note = Note::findOrFail($id);
+        
+        $note->update(['title' => $request->title,
+        'content' => $request->content,]);
+        return redirect("/notes");
+    }
+
+    public function edit($id)
+    {
+        $note = Note::findOrFail($id);
+        return view('notes.edit', ['note' => $note]);
+    }
 }
